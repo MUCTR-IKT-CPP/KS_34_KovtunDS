@@ -10,3 +10,4 @@
 *.json
 *.filters
 *.slnx
+/Lab_1/.vs
