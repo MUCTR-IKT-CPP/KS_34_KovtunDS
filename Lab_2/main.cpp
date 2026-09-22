@@ -223,33 +223,40 @@ int main() {
     printMatrix(p_genome_matrix, matrix_size);
 
     int operation_choice = 0;
-    cout << "\nВыберите операцию:" << endl;
-    cout << "1. Подсчитать количество вхождений каждой буквы" << endl;
-    cout << "2. Найти самую длинную последовательность одинаковых символов" << endl;
-    cout << "3. Построить обратную комплементарную матрицу" << endl;
-    cout << "Ваш выбор: ";
-    cin >> operation_choice;
 
-    if (operation_choice == 1) {
-        cout << "\nКоличество вхождений:" << endl;
-        countLetters(p_genome_matrix, matrix_size);
-    }
-    else if (operation_choice == 2) {
-        cout << "\nРезультат поиска:" << endl;
-        findLongestSequence(p_genome_matrix, matrix_size);
-    }
-    else if (operation_choice == 3) {
-        char** p_complement_matrix = nullptr;
-        allocateMatrix(p_complement_matrix, matrix_size);
-        buildComplementMatrix(p_genome_matrix, p_complement_matrix, matrix_size);
+    while (operation_choice != 4) {
+        cout << "\nВыберите операцию:" << endl;
+        cout << "1. Подсчитать количество вхождений каждой буквы" << endl;
+        cout << "2. Найти самую длинную последовательность одинаковых символов" << endl;
+        cout << "3. Построить обратную комплементарную матрицу" << endl;
+        cout << "4. Выход" << endl;
+        cout << "Ваш выбор: ";
+        cin >> operation_choice;
 
-        cout << "\nКомплементарная матрица:" << endl;
-        printMatrix(p_complement_matrix, matrix_size);
+        if (operation_choice == 1) {
+            cout << "\nКоличество вхождений:" << endl;
+            countLetters(p_genome_matrix, matrix_size);
+        }
+        else if (operation_choice == 2) {
+            cout << "\nРезультат поиска:" << endl;
+            findLongestSequence(p_genome_matrix, matrix_size);
+        }
+        else if (operation_choice == 3) {
+            char** p_complement_matrix = nullptr;
+            allocateMatrix(p_complement_matrix, matrix_size);
+            buildComplementMatrix(p_genome_matrix, p_complement_matrix, matrix_size);
 
-        freeMatrix(p_complement_matrix, matrix_size);
-    }
-    else {
-        cout << "Неверный выбор операции!" << endl;
+            cout << "\nКомплементарная матрица:" << endl;
+            printMatrix(p_complement_matrix, matrix_size);
+
+            freeMatrix(p_complement_matrix, matrix_size);
+        }
+        else if (operation_choice == 4) {
+            cout << "Выход из программы." << endl;
+        }
+        else {
+            cout << "Неверный выбор операции! Попробуйте снова." << endl;
+        }
     }
 
     freeMatrix(p_genome_matrix, matrix_size);
