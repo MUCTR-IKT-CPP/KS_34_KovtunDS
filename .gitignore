@@ -11,3 +11,8 @@
 *.filters
 *.slnx
 /Lab_1/.vs
+/Lab_1/.gitignore
+*.vcxproj
+/Lab_2/main/x64/Debug
+/Lab_2/x64/Debug
+/Lab_2
