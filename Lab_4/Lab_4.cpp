@@ -25,7 +25,6 @@ struct XMLData
     int attributes_count;
 };
 
-// Перечисление типов источников данных
 enum DataSourceType
 {
     CSV,
@@ -45,7 +44,6 @@ string getDataSourceTypeName(DataSourceType type)
     return names[type];
 }
 
-// Класс DataSource — элемент коллекции
 class DataSource
 {
 private:
