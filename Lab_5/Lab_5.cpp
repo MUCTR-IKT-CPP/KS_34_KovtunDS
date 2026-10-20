@@ -8,10 +8,6 @@
 
 using namespace std;
 
-/*
- * Базовый класс медицинского препарата.
- * Содержит общие поля и виртуальные методы для полиморфизма.
- */
 class MedicalPreparation
 {
 protected:
@@ -165,9 +161,6 @@ public:
     }
 };
 
-/*
- * Класс-менеджер аптеки.
- */
 class Pharmacy
 {
 private:
@@ -313,9 +306,6 @@ public:
         }
     }
 
-    /*
-     * Полный сброс аптеки
-     */
     void resetAll(int newCurrentDate)
     {
         balance = 50000.0;
